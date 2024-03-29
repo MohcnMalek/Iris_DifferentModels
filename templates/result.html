@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <!-- Link to static CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='resl.css') }}">
+
+    <style>
+        h1 {
+            font-family: 'Satisfy', cursive;
+        }
+
+        h3 {
+            font-family: 'Satisfy', cursive;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <center>
+            {% if data == 0 %}
+            <div class="polaroid">
+                <img src="{{ url_for('static', filename='setosa.jpg') }}" alt="setosa" style="width:100%">
+                <div class="container">
+                    <h3>Iris-Setosa</h3>
+                </div>
+            </div>
+            {% elif data == 1 %}
+            <div class="polaroid">
+                <img src="{{ url_for('static', filename='versicolor.jpg') }}" alt="versicolor" style="width:100%">
+                <div class="container">
+                    <h3>Iris-Versicolor</h3>
+                </div>
+            </div>
+            {% elif data == 2 %}
+            <div class="polaroid">
+                <img src="{{ url_for('static', filename='virginica.jpg') }}" alt="virginica" style="width:100%">
+                <div class="container">
+                    <h3>Iris-Virginica</h3>
+                </div>
+            </div>
+            {% endif %}
+
+           
+            <p>Accuracy: {{ accuracy }}</p>
+
+            <br><br>
+            <a href='/' class="button-19" role="button" style="color: white; text-decoration:none; ">BACK</a>
+        </center>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+
+<body style="background-color: grey;">
+
+    <div class="container">
+        <div class="card" style="width: 25rem; margin-top: 50px;">
+            <div class="card-body">
+                <h1 class="card-title text-center">Iris Flower Classification</h1>
+                <form method="POST" action="{{url_for('home')}}">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="a" placeholder="Sepal Length">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="b" placeholder="Sepal Width">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="c" placeholder="Petal Length">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="d" placeholder="Petal Width">
+                    </div>
+                     <div class="form-group">
+                        <label for="algorithm">Choose Algorithm:</label>
+                        <select class="form-control" id="algorithm" name="algorithm">
+                            <option value="Decision Tree">Decision Tree</option>
+                            <option value="K-Nearest Neighbors">K-Nearest Neighbors</option>
+                            <option value="Random Forest">Random Forest</option>
+                            <option value="SVM">Support Vector Machine (SVM)</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary btn-block" type="submit">Predict</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+  
+</body>
+
+</html>
